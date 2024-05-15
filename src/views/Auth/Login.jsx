@@ -1,7 +1,55 @@
+import { Link } from "react-router-dom";
 export default function Login() {
     return (
-        <div>
-            <h1>Inicie Sesion</h1>
-        </div>
+        <>
+            <h1 className="text-sky-700 font-black text-6xl max-sm:text-4xl text-center capitalize">
+                Sistema de asignación de Tareas
+            </h1>
+            <form className="my-10 bg-white shadow rounded-lg px-10 py-8">
+                <div className="my-5">
+                    <label
+                        htmlFor="email"
+                        className="uppercase text-gray-600 block text-xl font-bold"
+                    >
+                        Email
+                    </label>
+                    <input
+                        id="email"
+                        type="email"
+                        value=""
+                        placeholder="Email de Registro"
+                        className="w-full mt-3 p-3 border rounded-lg bg-gray-50"
+                    />
+                </div>
+                <div className="my-5">
+                    <label
+                        htmlFor="password"
+                        className="uppercase text-gray-600 block text-xl font-bold"
+                    >
+                        Contraseña
+                    </label>
+                    <input
+                        id="password"
+                        type="password"
+                        value=""
+                        placeholder="Contraseña"
+                        className="w-full mt-3 p-3 border rounded-lg bg-gray-50"
+                    />
+                </div>
+                <input
+                    type="submit"
+                    value="Iniciar Sesión"
+                    className="bg-sky-700 w-full py-3 text-white font-bold rounded uppercase mb-5 hover:cursor-pointer hover:bg-sky-900 transition-colors"
+                />
+            </form>
+            <nav className="lg:flex lg:justify-center">
+                <Link
+                    to="/olvide-password"
+                    className="block text-center my-5 text-slate-500 hover:text-sky-700 uppercase text-sm"
+                >
+                    Olvide mi Contraseña
+                </Link>
+            </nav>
+        </>
     );
 }
