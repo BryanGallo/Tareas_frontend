@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./views/Auth/Login";
-import ForgotPassword from "./views/Auth/ForgotPassword"
+import AuthLayout from "./layouts/AuthLayout";
+import Login from "./views/auth/Login";
+import ForgotPassword from "./views/auth/ForgotPassword"
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/">
+                <Route path="/" element={<AuthLayout />}>
                     <Route index element={<Login />} />
                     <Route
                         path="auth/forgot-password"
